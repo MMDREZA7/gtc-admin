@@ -1,0 +1,61 @@
+/* استایل سایدبار */
+.sidebar {
+  background-color: #1a2332; /* پس‌زمینه اصلی سایدبار */
+  padding: 1.5rem; /* فاصله داخلی */
+  width: 20rem; /* عرض سایدبار */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* سایه زیبا */
+}
+
+/* عنوان پنل مدیریت */
+.sidebar h1 {
+  font-size: 2rem; /* عنوان بزرگ‌تر */
+  font-weight: bold;
+  text-align: center;
+  color: #ffcc00; /* رنگ زرد طلایی */
+  margin-bottom: 2rem; /* فاصله از آیتم‌ها */
+}
+
+/* آیتم‌های منوی سایدبار */
+li {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* فاصله بین آیکون و متن */
+  cursor: pointer;
+  padding: 0.75rem; /* فاصله داخلی برای آیتم‌ها */
+  border-radius: 0.5rem; /* گوشه‌های گرد */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  background-color: #212b36; /* پس‌زمینه آیتم‌ها */
+  color: #ffffff; /* متن سفید */
+}
+
+/* استایل هنگام هاور روی آیتم‌های منو */
+li:hover {
+  background-color: #374151; /* رنگ هاور */
+  transform: translateY(-2px); /* حرکت ملایم به سمت بالا */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* ایجاد سایه زیبا */
+}
+
+/* آیکون‌های منو */
+li i {
+  color: #ffcc00; /* رنگ زرد طلایی برای آیکون‌ها */
+  font-size: 1.5rem; /* اندازه معقول‌تر برای آیکون‌ها */
+}
+
+/* متن آیتم‌های منو */
+li span {
+  color: #ffffff; /* متن سفید */
+  font-size: 1rem; /* اندازه متن */
+  font-weight: 500; /* متن کمی ضخیم‌تر */
+}
+
+/* استایل آیتم فعال */
+li.active {
+  background-color: #b89b2f; /* رنگ زرد طلایی تیره برای آیتم فعال */
+  transform: scale(1.02); /* افزایش سایز کمی برای آیتم فعال */
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2); /* سایه زیبا برای آیتم فعال */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+
+
+

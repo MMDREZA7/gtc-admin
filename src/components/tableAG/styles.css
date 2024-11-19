@@ -1,0 +1,195 @@
+/* تنظیمات اصلی جدول */
+.ag-theme-alpine {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 100px);
+  overflow: hidden;
+  background-color: #111827 !important; /* پس‌زمینه جدول */
+}
+
+/* تنظیم ارتفاع خودکار برای بدنه */
+.ag-theme-alpine .ag-body-viewport {
+  height: 100%;
+  max-height: calc(100vh - 150px);
+  overflow-y: auto;
+}
+
+/* تنظیمات هدر جدول */
+.ag-theme-alpine .ag-header-cell {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  color: #ffffff !important; /* رنگ متن سفید */
+  background-color: #1a2332 !important; /* پس‌زمینه هدر */
+  font-weight: bold !important;
+  font-size: 1rem !important; /* اندازه فونت */
+  padding: 5px !important; /* فاصله داخلی */
+  border-right: none !important; /* حذف خط راست هدر */
+  border-left: none !important;  /* حذف خط چپ هدر */
+}
+
+/* افزودن خط عمودی کامل */
+.ag-theme-alpine .ag-header-row, 
+.ag-theme-alpine .ag-row {
+  border-right: 2px solid #ffffff !important; /* خط سفید عمودی */
+}
+
+/* تنظیم مرکزچینی دقیق برای محتوا */
+.ag-theme-alpine .ag-header-cell-label {
+  display: flex !important;
+  justify-content: center !important; /* وسط‌چین افقی محتوا */
+  align-items: center !important; /* وسط‌چین عمودی محتوا */
+  width: 100% !important; /* عرض کامل سلول */
+  height: 100% !important; /* ارتفاع کامل سلول */
+  margin: 0 !important; /* حذف حاشیه‌های پیش‌فرض */
+  text-align: center !important;
+}
+
+/* تنظیمات کلی برای سلول‌ها */
+.ag-theme-alpine .ag-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  font-size: 0.9rem;
+  text-align: center;
+  background-color: #111827; /* پس‌زمینه سلول */
+  color: #ffffff; /* رنگ متن */
+}
+
+/* حذف اسکرول اضافی */
+.ag-theme-alpine .ag-body-horizontal-scroll {
+  display: none;
+}
+
+/* تنظیمات خطوط جداکننده */
+.ag-theme-alpine .ag-cell {
+  border: 0.5px solid #fff; /* خط جداکننده بین سلول‌های جدول */
+}
+
+/* تنظیمات برای سوئیچر */
+.custom-switch-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  direction: rtl; /* راست‌چین بودن */
+}
+
+.custom-switch .p-inputswitch-slider {
+  transition: all 0.3s ease;
+}
+
+.custom-switch-label {
+  font-size: 0.9rem;
+  font-weight: bold;
+  margin-left: 0.5rem;
+}
+
+/* دکمه‌های عملیات */
+.action-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0.25rem;
+  min-width: 40px;
+  font-size: 0.8rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  padding: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.action-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* تنظیمات کلی ستون عملیات */
+.actions-container {
+  display: flex;
+  flex-wrap: nowrap; /* جلوگیری از شکستن خط */
+  justify-content: space-around;
+  gap: 0.5rem; /* فاصله بین دکمه‌ها */
+}
+
+/* رنگ آیکون حذف */
+.p-button-danger .pi.pi-trash {
+  color: red !important; /* قرمز */
+}
+
+/* رنگ آیکون ویرایش */
+.p-button-warning .pi.pi-pencil {
+  color: yellow !important; /* زرد */
+}
+
+/* رنگ آیکون ارسال پیام */
+.p-button-info .pi.pi-envelope {
+  color: #007bff !important; /* آبی */
+}
+
+/* ریسپانسیو برای ستون‌ها و دکمه‌ها در صفحات کوچک */
+@media (max-width: 768px) {
+  .ag-cell[col-id="actions"] {
+    padding: 20px; /* افزایش پدینگ در حالت ریسپانسیو */
+  }
+
+  .ag-cell {
+    padding-left: 15px; /* افزایش پدینگ در تمامی سلول‌ها */
+    padding-right: 15px; /* افزایش پدینگ در تمامی سلول‌ها */
+  }
+
+  .actions-container {
+    justify-content: center; /* دکمه‌ها در مرکز ستون */
+    gap: 0.2rem; /* فاصله کمتر بین دکمه‌ها */
+  }
+
+  .action-button {
+    margin: 0.1rem; /* فاصله کمتر برای دکمه‌ها */
+    font-size: 0.7rem;
+    min-width: 35px; /* تنظیم حداقل عرض */
+    height: 35px; /* تنظیم ارتفاع */
+  }
+}
+
+/* تنظیمات زیبایی برای جدول */
+.ag-theme-alpine {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+}
+
+.ag-header {
+  background-color: #f7f7f7;
+  font-weight: bold;
+  color: #333;
+}
+
+.ag-row {
+  transition: background-color 0.2s ease;
+}
+
+.ag-row:hover {
+  background-color: #f1f1f1;
+}
+
+/* نشانگر موس برای ستون‌های قابل تغییر اندازه */
+.ag-theme-alpine .ag-header-cell-resize {
+  cursor: col-resize !important; /* تغییر نشانگر به حالت تغییر اندازه */
+}
+
+/* خطوط بین هدر‌ها */
+.ag-theme-alpine .ag-header-cell {
+  border: 1px solid rgba(255, 255, 255, 0.5) !important; /* اضافه کردن خطوط */
+}
+
+/* خطوط بین سلول‌ها */
+.ag-theme-alpine .ag-cell {
+  border-right: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.ag-body-viewport.ag-row-animation.ag-layout-normal {
+  background-color: #111827;
+}
+
