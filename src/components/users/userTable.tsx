@@ -1,39 +1,79 @@
-import React, { useState } from 'react';
-import AgGridTable from '../tableAG/tableAggrid';
-import EditForm from './form/UserForm';
-import SendMessage from '../../components/users/sendMessage/sendMessage';
-import { Button } from 'primereact/button';
-
+import React, { useState } from "react";
+import AgGridTable from "../tableAG/tableAggrid";
+import EditForm from "./form/UserForm";
+import SendMessage from "../../components/users/sendMessage/sendMessage";
+import { Button } from "primereact/button";
 
 const UsersTable: React.FC = () => {
   const [data, setData] = useState([
-    { id: 1, name: 'محمد حسین حسن زاده', email: 'user1@example.com', status: 'فعال', mobile: '09023001271', level: 'سطح 2', userType: 'مدیر' },
-    { id: 2, name: 'علی رضایی', email: 'user2@example.com', status: 'غیرفعال', mobile: '09926559671', level: 'سطح 3', userType: 'کاربر' },
+    {
+      id: 1,
+      name: "محمد حسین حسن زاده",
+      email: "user1@example.com",
+      status: "فعال",
+      mobile: "09023001271",
+      level: "سطح 2",
+      userType: "مدیر",
+    },
+    {
+      id: 2,
+      name: "علی رضایی",
+      email: "user2@example.com",
+      status: "غیرفعال",
+      mobile: "09926559671",
+      level: "سطح 3",
+      userType: "کاربر",
+    },
   ]);
 
   const [selectedUser, setSelectedUser] = useState<any>(null);
   const [isEditDialogOpen, setIsEditDialogOpen] = useState(false);
   const [isMessageDialogOpen, setIsMessageDialogOpen] = useState(false);
-  const [formTitle, setFormTitle] = useState<string>('');
+  const [formTitle, setFormTitle] = useState<string>("");
 
   const columnDefs = [
-    { headerName: 'نام', field: 'name', cellStyle: { textAlign: 'center' }, headerClass: 'header-center' },
-    { headerName: 'ایمیل', field: 'email', cellStyle: { textAlign: 'center' }, headerClass: 'header-center' },
-    { headerName: 'شماره تلفن', field: 'mobile', cellStyle: { textAlign: 'center' }, headerClass: 'header-center' },
-    { headerName: 'نوع کاربر', field: 'userType', cellStyle: { textAlign: 'center' }, headerClass: 'header-center' },
-    { headerName: 'سطح عملیات', field: 'level', cellStyle: { textAlign: 'center' }, headerClass: 'header-center' },
-    { headerName: 'عملیات', field: 'actions' },
+    {
+      headerName: "نام",
+      field: "name",
+      cellStyle: { textAlign: "center" },
+      headerClass: "header-center",
+    },
+    {
+      headerName: "ایمیل",
+      field: "email",
+      cellStyle: { textAlign: "center" },
+      headerClass: "header-center",
+    },
+    {
+      headerName: "شماره تلفن",
+      field: "mobile",
+      cellStyle: { textAlign: "center" },
+      headerClass: "header-center",
+    },
+    {
+      headerName: "نوع کاربر",
+      field: "userType",
+      cellStyle: { textAlign: "center" },
+      headerClass: "header-center",
+    },
+    {
+      headerName: "سطح عملیات",
+      field: "level",
+      cellStyle: { textAlign: "center" },
+      headerClass: "header-center",
+    },
+    { headerName: "عملیات", field: "actions" },
   ];
 
   const handleEdit = (userData: any) => {
     setSelectedUser(userData);
-    setFormTitle('ویرایش کاربر');
+    setFormTitle("ویرایش کاربر");
     setIsEditDialogOpen(true);
   };
 
   const handleAddUser = () => {
     setSelectedUser(null);
-    setFormTitle('افزودن کاربر');
+    setFormTitle("افزودن کاربر");
     setIsEditDialogOpen(true);
   };
 
@@ -44,7 +84,7 @@ const UsersTable: React.FC = () => {
 
   const handleSendMessage = (userData: any) => {
     setSelectedUser(userData);
-    setFormTitle('ارسال پیام');
+    setFormTitle("ارسال پیام");
     setIsMessageDialogOpen(true);
   };
 
@@ -72,7 +112,7 @@ const UsersTable: React.FC = () => {
           label="افزودن کاربر"
           icon="pi pi-user-plus"
           className="p-button-success p-2 flex items-center gap-2"
-          style={{ backgroundColor: '#28a745', borderColor: '#28a745' }}
+          style={{ backgroundColor: "#28a745", borderColor: "#28a745" }}
           onClick={handleAddUser}
         />
       </div>
@@ -86,7 +126,15 @@ const UsersTable: React.FC = () => {
       {isEditDialogOpen && (
         <EditForm
           title={formTitle}
-          data={selectedUser || { name: '', email: '', mobile: '', userType: 'کاربر', level: 'سطح 1' }}
+          data={
+            selectedUser || {
+              name: "",
+              email: "",
+              mobile: "",
+              userType: "کاربر",
+              level: "سطح 1",
+            }
+          }
           onSave={handleSave}
           onCancel={handleCancelEdit}
         />
